@@ -19,11 +19,11 @@
 # set your preferred icons here
 ocu=`printf "%b" " "`
 : ${commmits_total:=''} # or you can try f737 with a nerd font
-: ${added_but_not_:=''}
-: ${committed_but_:=''}
-: ${no_of_files_to:=''}
-: ${committed_but_:=''}
-: ${untracked_file:=''}
+: ${added_but_not_pushed:=''}
+: ${committed_but_not_pushed:=''}
+: ${no_of_files_to_be_pushed:=''}
+: ${committed_but_modified_before_push:=''}
+: ${untracked_files:=''}
 : ${gitprompt_icon:=''}
 
 read a_but_not_c c_but_not_p c_but_m_before_p untracked <<< $( echo | xargs -n 1 -P 8 ~/.cal.sh )
