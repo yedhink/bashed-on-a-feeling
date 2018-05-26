@@ -8,16 +8,20 @@
 # ░▓▓▓▓▓▓▓▓▓▓
 # ░░░░░░░░░░
 #
-# THIS IS A CUSTOM PROMPT THAT I MADE.
-# TRIED TO MIMICK THE OH-MY-ZSH TERMINALPARTY THEME
-# NOT FULLY FUNCTIONAL. BUT THE BARE NECESSECITIES ARE PRESENT
-# I CALL THIS "bashed-on-a-feeling"
-#gbranch          = "master"
-#gbranch          = "$(tput bold)$(tput setaf 7)$gbranch"
-#a_but_not_c      = `git diff --cached --name-only | wc -l`
-#c_but_not_p      = `git diff --stat origin/master.. | wc -l`
-#c_but_m_before_p = `git diff --name-status | wc -l`
-#untracked        = `git ls-files --others --exclude-standard | wc -l`
+# this is a custom prompt that i made when i started struggling with maintaining my repos and was not able to find a git-prompt of my liking
+# FEATURES :
+#	  MINAMILISTIC CHECK
+#	  INFORMATIVE  CHECK
+#	  FAST         CHECK
+
+#  "ahh..ahh..ah..bashed-on-a-feeling!"
+
+# set your preferred icons here
+commmits_total                     = "" # or you can try f737 with a nerd font
+added_but_not_commited             = ""
+committed_but_not_pushed           = ""
+committed_but_modified_before_push = ""
+untracked_files                    = ""
 
 read a_but_not_c c_but_not_p c_but_m_before_p untracked <<< $( echo | xargs -n 1 -P 8 ~/bashed-on-a-feeling/cal.sh )
 
@@ -34,8 +38,6 @@ while read -r Z; do
 	[[ "$Z" == commit* ]] && cno+=1
 done <<< "$(/usr/bin/git log 2> /dev/null)"
 commitstot=$cno
-commiticon="\\uf737"
-commiticon=`printf "%b\\n" "$commiticon"`
 
 if [ $a_but_not_c -eq 0 ];then
 	a_but_not_c=""
@@ -91,5 +93,5 @@ local Rest='\e[u' # Restore cursor to save point
 
 # ensure that this PS1 and corresponding ANSI Seq's are closed properly
 #PS1='\[\e[0;31m\]♥ \e[0;31m\]\W \[\e[1;33m\]\$\[\e[0m\] '
-PS1='\[\e[1;33;3m\]\w \[\e[0m\]$(tput setaf 2)$(tput bold)$commitstot $commiticon\n $(tput setaf 7)$(tput bold)$(tput setab 4) \[\e[0m\] '
+PS1='\[\e[1;33;3m\]\w \[\e[0m\]$(tput setaf 2)$(tput bold)$commitstot $commits_total\n $(tput setaf 7)$(tput bold)$(tput setab 4) \[\e[0m\] '
 export PS1="\[${Save}\e[${COLUMNS}C\e[${#PS1RHS_stripped}D${PS1RHS}${Rest}\]${PS1}"
