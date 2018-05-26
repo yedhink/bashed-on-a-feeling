@@ -45,7 +45,7 @@ commitstot=$cno
 if [ $a_but_not_c -eq 0 ];then
 	a_but_not_c=""
 else
-	a_but_not_c="$(tput bold)$(tput setaf 7)$a_but_not_c$(tput bold)$(tput setaf 2)$(printf "%b" "${added_but_not_commited}")"
+	a_but_not_c="$(tput bold)$(tput setaf 7)$a_but_not_c$(tput bold)$(tput setaf 2)$(printf "%s" "${added_but_not_commited}")"
 fi
 
 if [ $c_but_not_p -gt 0 ];then
@@ -55,19 +55,19 @@ fi
 if [ $c_but_not_p == 0 ];then
 	c_but_not_p="$(tput bold)$(tput setaf 2)$(printf "%b" "${committed_but_not_pushed}")"
 else
-	c_but_not_p="$(tput bold)$(tput setaf 7)$c_but_not_p$(tput bold)$(tput setaf 2)$(printf "%b" "${no_of_files_to_be_pushed}")"
+	c_but_not_p="$(tput bold)$(tput setaf 7)$c_but_not_p$(tput bold)$(tput setaf 2)$(printf "%s" "${no_of_files_to_be_pushed}")"
 fi
 echo "$c_but_not_p"
 if [ $c_but_m_before_p -eq 0 ];then
 	c_but_m_before_p=""
 else
-	c_but_m_before_p="$(tput bold)$(tput setaf 7)$c_but_m_before_p$(tput bold)$(tput setaf 2)$(printf "%b" "${committed_but_modified_before_push}")"
+	c_but_m_before_p="$(tput bold)$(tput setaf 7)$c_but_m_before_p$(tput bold)$(tput setaf 2)$(printf "%s" "${committed_but_modified_before_push}")"
 fi
 
 if [ $untracked -eq 0 ];then
 	untracked=""
 else
-	untracked="$(tput bold)$(tput setaf 7)$untracked$(tput bold)$(tput setaf 2)$(printf "%b" "${untracked_files}")"
+	untracked="$(tput bold)$(tput setaf 7)$untracked$(tput bold)$(tput setaf 2)$(printf "%s" "${untracked_files}")"
 fi
 # Create a string
 printf -v PS1RHS "\e[0m \e[0;1;31m%s %s %s %s %s\e[0m" "$gbranch" "$a_but_not_c" "$c_but_not_p" "$c_but_m_before_p" "$untracked"
