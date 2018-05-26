@@ -45,7 +45,7 @@ commitstot=$cno
 if [ $a_but_not_c -eq 0 ];then
 	a_but_not_c=""
 else
-	a_but_not_c="$(tput bold)$(tput setaf 7)$a_but_not_c$(tput bold)$(tput setaf 2)$(printf "%b" "$added_but_not_commited")"
+	a_but_not_c="$(tput bold)$(tput setaf 7)$a_but_not_c$(tput bold)$(tput setaf 2)$(printf "%b" "${added_but_not_commited}")"
 fi
 
 if [ $c_but_not_p -gt 0 ];then
@@ -55,7 +55,7 @@ fi
 if [ $c_but_not_p == 0 ];then
 	c_but_not_p="$(tput bold)$(tput setaf 2)$(printf "%b" "${committed_but_not_pushed}")"
 else
-	c_but_not_p="$(tput bold)$(tput setaf 7)$c_but_not_p$(tput bold)$(tput setaf 2)$(printf "%b" "$no_of_files_to_be_pushed")"
+	c_but_not_p="$(tput bold)$(tput setaf 7)$c_but_not_p$(tput bold)$(tput setaf 2)$(printf "%b" "${no_of_files_to_be_pushed}")"
 fi
 
 if [ $c_but_m_before_p -eq 0 ];then
