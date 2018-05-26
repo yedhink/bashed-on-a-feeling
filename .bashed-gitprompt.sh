@@ -25,7 +25,7 @@ committed_but_modified_before_push = `echo `
 untracked_files                    = `echo `
 gitprompt_icon                     = `echo `
 
-read a_but_not_c c_but_not_p c_but_m_before_p untracked <<< $( echo | xargs -n 1 -P 8 ~/bashed-on-a-feeling/cal.sh )
+read a_but_not_c c_but_not_p c_but_m_before_p untracked <<< $( echo | xargs -n 1 -P 8 ~/.cal.sh )
 
 while read -ra Z; do
 	if [[ "${Z[@]}" == \*\ * ]]; then
