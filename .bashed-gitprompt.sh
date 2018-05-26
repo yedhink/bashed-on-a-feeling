@@ -25,7 +25,6 @@
 : ${untracked_files:=''}
 : ${gitprompt_icon:=''}
 
-echo $committed_but_not_pushed
 read a_but_not_c c_but_not_p c_but_m_before_p untracked <<< $( echo | xargs -n 1 -P 8 ~/.cal.sh )
 
 while read -ra Z; do
@@ -57,7 +56,7 @@ fi
 if [ $c_but_not_p == 0 ];then
 	c_but_not_p="$(tput bold)$(tput setaf 2)"
 else
-	c_but_not_p="$(tput bold)$(tput setaf 7)$c_but_not_p$(tput bold)$(tput setaf 2)"
+	c_but_not_p="$(tput bold)$(tput setaf 7)$c_but_not_p$(tput bold)$(tput setaf 2)$(echo $committed_but_not_pushed)"
 fi
 
 if [ $c_but_m_before_p -eq 0 ];then
