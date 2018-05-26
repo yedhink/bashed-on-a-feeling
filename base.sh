@@ -1,4 +1,8 @@
-#!/bin/bash
+
+# # # # # # # # # # # #
+# bashed-on-a-feeling #
+# # # # # # # # # # # #
+
 # git prompt will be shown only when you move to a git dir
 gitprompt(){
 	git status &> /dev/null
