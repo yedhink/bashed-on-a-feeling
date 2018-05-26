@@ -17,13 +17,14 @@
 #  "ahh..ahh..ah..bashed-on-a-feeling!"
 #
 # set your preferred icons here
-commmits_total                     = `echo ` # or you can try f737 with a nerd font
-added_but_not_commited             = `echo `
-committed_but_not_pushed           = `echo `
-no_of_files_to_be_pushed           = `echo `
-committed_but_modified_before_push = `echo `
-untracked_files                    = `echo `
-gitprompt_icon                     = `echo `
+ocu=`printf "%b" " "`
+commmits_total                     = `printf "%b" ""` # or you can try f737 with a nerd font
+added_but_not_commited             = `printf "%b" ""`
+committed_but_not_pushed           = `printf "%b" ""`
+no_of_files_to_be_pushed           = `printf "%b" ""`
+committed_but_modified_before_push = `printf "%b" ""`
+untracked_files                    = `printf "%b" ""`
+gitprompt_icon                     = `printf "%b" ""`
 
 read a_but_not_c c_but_not_p c_but_m_before_p untracked <<< $( echo | xargs -n 1 -P 8 ~/.cal.sh )
 
