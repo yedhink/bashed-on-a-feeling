@@ -18,7 +18,7 @@
 #
 # set your preferred icons here
 ocu=`printf "%b" " "`
-: ${commmits_total:=''} # or you can try f737 with a nerd font
+: ${commits_total:=''} # or you can try f737 with a nerd font
 : ${added_but_not_pushed:=''}
 : ${committed_but_not_pushed:=''}
 : ${no_of_files_to_be_pushed:=''}
@@ -57,7 +57,7 @@ if [ $c_but_not_p == 0 ];then
 else
 	c_but_not_p="$(tput bold)$(tput setaf 7)$c_but_not_p$(tput bold)$(tput setaf 2)$(printf "%b" "${no_of_files_to_be_pushed}")"
 fi
-
+echo "$c_but_not_p"
 if [ $c_but_m_before_p -eq 0 ];then
 	c_but_m_before_p=""
 else
@@ -96,5 +96,5 @@ local Rest='\e[u' # Restore cursor to save point
 
 # ensure that this PS1 and corresponding ANSI Seq's are closed properly
 #PS1='\[\e[0;31m\]♥ \e[0;31m\]\W \[\e[1;33m\]\$\[\e[0m\] '
-PS1='\[\e[1;33;3m\]\w \[\e[0m\]$(tput setaf 2)$(tput bold)$commitstot $commits_total\n $(tput setaf 7)$(tput bold)$(tput setab 4)${gitprompt_icon} \[\e[0m\] '
+PS1='\[\e[1;33;3m\]\w \[\e[0m\]$(tput setaf 2)$(tput bold)$commitstot ${commits_total}\n $(tput setaf 7)$(tput bold)$(tput setab 4)${gitprompt_icon} \[\e[0m\] '
 export PS1="\[${Save}\e[${COLUMNS}C\e[${#PS1RHS_stripped}D${PS1RHS}${Rest}\]${PS1}"
