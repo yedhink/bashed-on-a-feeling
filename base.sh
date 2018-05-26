@@ -9,6 +9,11 @@ gitprompt(){
 	if [ "$?" == 0 ];then
 		source /home/${USER}/.bashed-gitprompt.sh
 		declare -i cno=0
+		# Create a string
+		printf -v PS1RHS "\e[0m \e[0;1;31m%s %s %s %s %s\e[0m" "$gbranch" "$a_but_not_c" "$c_but_not_p" "$c_but_m_before_p" "$untracked"
+
+		# Strip ANSI commands before counting length
+		PS1RHS_stripped=$(sed "s,\x1B\[[0-9;]*[a-zA-Z],,g" <<<"$PS1RHS")
 		local Save='\e[s' # Save cursor position
 		local Rest='\e[u' # Restore cursor to save point
 

@@ -18,16 +18,9 @@
 #
 # set your preferred icons here
 ocu=`printf "%b" " "`
-: ${commits_total:=''} # or you can try f737 with a nerd font
-: ${added_but_not_pushed:=''}
-: ${committed_but_not_pushed:=''}
-: ${no_of_files_to_be_pushed:=''}
-: ${committed_but_modified_before_push:=''}
-: ${untracked_files:=''}
-: ${gitprompt_icon:=''}
 
-read a_but_not_c c_but_not_p c_but_m_before_p untracked <<< $( echo | xargs -n 1 -P 8 bash ~/.cal.sh )
-echo $a_but_not_c $c_but_not_p $c_but_m_before_p $untracked
+read a_but_not_c c_but_not_p c_but_m_before_p untracked <<< $( echo | xargs -n 1 -P 8 ~/dotfiles_ikigai/scripts/blah/para.sh )
+
 while read -ra Z; do
 	if [[ "${Z[@]}" == \*\ * ]]; then
 		gbranch="${Z[1]}"
@@ -71,8 +64,4 @@ if [ $untracked -eq 0 ];then
 else
 	untracked="$(tput bold)$(tput setaf 7)$untracked$(tput bold)$(tput setaf 2)"
 fi
-# Create a string
-printf -v PS1RHS "\e[0m \e[0;1;31m%s %s %s %s %s\e[0m" "$gbranch" "$a_but_not_c" "$c_but_not_p" "$c_but_m_before_p" "$untracked"
 
-# Strip ANSI commands before counting length
-PS1RHS_stripped=$(sed "s,\x1B\[[0-9;]*[a-zA-Z],,g" <<<"$PS1RHS")
