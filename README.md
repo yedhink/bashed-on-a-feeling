@@ -1,6 +1,7 @@
 # bashed-on-a-feeling   
 a minamalistic and informative git prompt for bash(as of now).  
-inspiration from the `terminalparty` theme of `OMZ` and the need for a minimalistic "git" prompt for version control , these two forces drove me to create this.
+inspiration from the `terminalparty` theme of `OMZ` and the need for a minimalistic "git" prompt for version control , these two forces drove me to create this.  
+["Ooga-chaka, ooga-ooga"](https://youtu.be/NrI-UBIB8Jki) ;)
 
 ![](full filled)
 ![](clean)
