@@ -19,7 +19,7 @@
 #c_but_m_before_p = `git diff --name-status | wc -l`
 #untracked        = `git ls-files --others --exclude-standard | wc -l`
 
-read a_but_not_c c_but_not_p c_but_m_before_p untracked <<< $( echo | xargs -n 1 -P 8 ~/dotfiles_ikigai/scripts/blah/para.sh )
+read a_but_not_c c_but_not_p c_but_m_before_p untracked <<< $( echo | xargs -n 1 -P 8 ~/bashed-on-a-feeling/cal.sh )
 
 while read -ra Z; do
 	if [[ "${Z[@]}" == \*\ * ]]; then
