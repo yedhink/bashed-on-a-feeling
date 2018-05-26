@@ -28,8 +28,8 @@ gitprompt(){
 	if [ "$?" == 0 ];then
 		declare -i cno=0
 		source /home/${USER}/.bashed-on-a-feeling.sh
-		local Save='\e[s' # Save cursor position
-		local Rest='\e[u' # Restore cursor to save point
+#		local Save='\e[s' # Save cursor position
+#		local Rest='\e[u' # Restore cursor to save point
 
 		#while read -r Z; do
 		#	[[ "$Z" == commit* ]] && cno+=1
@@ -48,8 +48,8 @@ gitprompt(){
 		
 		# ensure that this PS1 and corresponding ANSI Seq's are closed properly
 		#PS1='\[\e[0;31m\]♥ \e[0;31m\]\W \[\e[1;33m\]\$\[\e[0m\] '
-		PS1='\[\e[1;33;3m\]\w \[\e[0m\]$(tput setaf 2)$(tput bold)$commitstot $commiticon\n $(tput setaf 7)$(tput bold)$(tput setab 4) \[\e[0m\] '
-		export PS1="\[${Save}\e[${COLUMNS}C\e[${#PS1RHS_stripped}D${PS1RHS}${Rest}\]${PS1}"
+#		PS1='\[\e[1;33;3m\]\w \[\e[0m\]$(tput setaf 2)$(tput bold)$commitstot $commiticon\n $(tput setaf 7)$(tput bold)$(tput setab 4) \[\e[0m\] '
+#		export PS1="\[${Save}\e[${COLUMNS}C\e[${#PS1RHS_stripped}D${PS1RHS}${Rest}\]${PS1}"
 	else
 		export PS1='\[\e[0;31m\]♥ \e[0;31m\]\W \[\e[1;33m\]\$\[\e[0m\] '
 		gbranch=""
