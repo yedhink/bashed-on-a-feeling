@@ -25,6 +25,7 @@
 : ${untracked_files:=''}
 : ${gitprompt_icon:=''}
 
+echo $committed_but_not_pushed
 read a_but_not_c c_but_not_p c_but_m_before_p untracked <<< $( echo | xargs -n 1 -P 8 ~/.cal.sh )
 
 while read -ra Z; do
