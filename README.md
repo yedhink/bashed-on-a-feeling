@@ -4,7 +4,7 @@ inspiration from the `terminalparty` theme of `OMZ` and the need for a minimalis
 
 ## what do those symbols mean?
 
-* ```master ```: on branch ``master``, in its "i"nitial stage , where no remote has been added yet   
+* ```bash master ```: on branch ``master``, in its "i"nitial stage , where no remote has been added yet   
 * ``master 2↑ 1✚``: on branch ``master``, ahead of remote by 2 commits, 1 file changed but not staged
 * ``master 6?``: on branch ``master``, 6 files files untracked
 * ``master 2✖ 3✚``: on branch ``master``, 2 unstaged, 3 files modified
