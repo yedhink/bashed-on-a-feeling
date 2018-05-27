@@ -1,6 +1,6 @@
 <h1 align="center">bashed-on-a-feeling</h1>  
     
-### a minamalistic and fast git prompt written purely in bash.  
+<h3 align="center">a minamalistic and fast git prompt written purely in bash</h3>  
 
 inspiration from the `terminalparty` theme of `OMZ` and the need for a minimalistic "git" prompt for version control , these two forces drove me to create this. Also this too ["Ooga-chaka, ooga-ooga"](https://youtu.be/NrI-UBIB8Jki) ;)  
 
