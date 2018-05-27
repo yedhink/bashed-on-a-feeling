@@ -17,7 +17,7 @@ echo -ne "$(git diff --cached --name-only | wc -l)"\
 	"$(git diff --name-status | wc -l)"\
 	"$(git ls-files --others --exclude-standard | wc -l)"\
 	"$gbranch"\
-	"${cno}"\
+	"${cno}" \
 
 git rev-list --left-right --count origin/master..."$gbranch" >/dev/null 2>&1
 if [ "$?" == 0 ];then
