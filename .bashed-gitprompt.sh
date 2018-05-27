@@ -23,12 +23,14 @@
 : ${commiticon:=''} # or you can try f737 with a nerd font
 : ${added_but_not_committed:=''}
 : ${committed_and_clean:=''}
-: ${no_of_files_to_be_pushed:=''}
+: ${no_of_commits_to_be_pushed:=''}
 : ${committed_but_modified_before_push:=''}
 : ${untracked_files:=''}
 : ${gitprompt_icon:=''}
 
 read a_but_not_c c_but_not_p c_but_m_before_p untracked gbranch commitstot<<< $( echo | xargs -n 1 -P 8 ~/.cal.sh )
+
+gbranch="$(tput bold)$(tput setaf 7)$gbranch"
 
 if [ $a_but_not_c -eq 0 ];then
 	a_but_not_c=""
@@ -43,7 +45,7 @@ fi
 if [ $c_but_not_p == 0 ];then
 	c_but_not_p="$(tput bold)$(tput setaf 2)$(echo $committed_and_clean)"
 else
-	c_but_not_p="$(tput bold)$(tput setaf 7)$c_but_not_p$(tput bold)$(tput setaf 2)$(echo $no_of_files_to_be_pushed)"
+	c_but_not_p="$(tput bold)$(tput setaf 7)$c_but_not_p$(tput bold)$(tput setaf 2)$(echo $no_of_commits_to_be_pushed)"
 fi
 
 if [ $c_but_m_before_p -eq 0 ];then
