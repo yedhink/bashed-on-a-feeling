@@ -34,7 +34,7 @@ run the above and see for yourself.
 * ``↕``: you're in git repository which has been diverged 
 
 ## installation
-in the above examples i've made use of the Hasklug, a patched variant of [Hasklig](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hasklig) and [Font Awesome](https://github.com/FortAwesome/Font-Awesome) fonts.  
+in the above examples i've made use of the Hasklug nerd font, a patched variant of [Hasklig](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hasklig) and [Font Awesome](https://github.com/FortAwesome/Font-Awesome) fonts.  
 **the user is required to install and use any of the nerd fonts and Font Awesome font, inorder to render those fancy symbols that i've used.**      
 the simplest way to install the fonts on a Linux distro would be to :  
 * choose your [nerd font](https://github.com/ryanoasis/nerd-fonts) and follow the instructions for [font awesome](https://github.com/FortAwesome/Font-Awesome) to use it  
@@ -53,8 +53,8 @@ then restart your terminal. BOOM!
 
 ## customizing symbols
 
-You can easily change any symbols used by the prompt. Take a look to the file [.bashed-gitprompt.sh]() . You will find a bunch of variables, each of them with its default value. The variables names should be auto-explanatory. Something like  
 **note that the editing , after installation, should be done on `.bashed-gitprompt.sh` file in your home(~) directory for the changes to take place**  
+you can easily change any symbols used by the prompt. Take a look to the file [.bashed-gitprompt.sh]() . you will find a bunch of variables, each of them with its default value. the variable names were meant to be auto-explanatory. Something like  
 
 ```bash
 	: ${untracked_files:='?'}
