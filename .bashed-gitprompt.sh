@@ -28,7 +28,7 @@
 : ${behind:=''}
 : ${committed_but_modified_before_push:=''}
 : ${untracked_files:=''}
-: ${gitprompt_normal:=''}
+: ${gitprompt_normal:=''}
 : ${gitprompt_diverged:=''}
 
 read a_but_not_c c_but_not_p c_but_m_before_p untracked gbranch commitstot behindby aheadby<<< $( echo | xargs -n 1 -P 8 ~/.cal.sh )
