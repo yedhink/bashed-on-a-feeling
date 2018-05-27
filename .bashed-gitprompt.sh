@@ -28,7 +28,7 @@
 : ${untracked_files:=''}
 : ${gitprompt_icon:=''}
 
-read a_but_not_c c_but_not_p c_but_m_before_p untracked gbranch commitstot<<< $( echo | xargs -n 1 -P 8 ~/bashed-on-a-feeling/.cal.sh )
+read a_but_not_c c_but_not_p c_but_m_before_p untracked gbranch commitstot<<< $( echo | xargs -n 1 -P 8 ~/.cal.sh )
 
 #while read -ra Z; do
 #	if [[ "${Z[@]}" == \*\ * ]]; then
