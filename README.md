@@ -98,4 +98,4 @@ you've to follow the [Contribution Guidelines]() while you're at it though.
 
 ## license
 ***"use this repo in the name of open source and freeeedoooom!!!"***  
-refer to [License]() for more details. :)
+refer to [License](https://raw.githubusercontent.com/yedhink/bashed-on-a-feeling/master/LICENSE) for more details. :)
