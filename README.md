@@ -5,7 +5,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/bash-4.4.19-brightgreen.svg" />
   <img src="https://img.shields.io/badge/Font%20Awesome-5.0.13-yellow.svg" />
-  <img src="https://img.shields.io/badge/Font%20Awesome-5.0.13-yellow.svg" />
+  <img src="https://img.shields.io/badge/Nerd%20Font-Hasklug%20patched-orange.svg" />
   <br><br>
   <img src="https://github.com/yedhink/bashed-on-a-feeling/blob/master/previews/fullclean.png">
 </p>
