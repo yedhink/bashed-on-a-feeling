@@ -1,5 +1,5 @@
 # bashed-on-a-feeling   
-### a minamalistic and fast git prompt purely written in bash.  
+### a minamalistic and fast git prompt written purely in bash.  
 
 inspiration from the `terminalparty` theme of `OMZ` and the need for a minimalistic "git" prompt for version control , these two forces drove me to create this. Also this too ["Ooga-chaka, ooga-ooga"](https://youtu.be/NrI-UBIB8Jki) ;)  
 
