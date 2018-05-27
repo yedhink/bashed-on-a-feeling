@@ -3,6 +3,19 @@
 
 inspiration from the `terminalparty` theme of `OMZ` and the need for a minimalistic "git" prompt for version control , these two forces drove me to create this. Also this too ["Ooga-chaka, ooga-ooga"](https://youtu.be/NrI-UBIB8Jki) ;)  
 
+**the clean prompt. the check mark says that the repo is clean**  
+![](https://github.com/yedhink/bashed-on-a-feeling/blob/master/clean.png)  
+
+**lets see how much is the average time the git-prompt takes to load up :**    
+```bash
+for i in $(seq 1 10); do time $SHELL -i -c exit > /dev/null 2>&1; done'
+	```  
+run this and see for yourself.  
+![](https://github.com/yedhink/bashed-on-a-feeling/blob/master/terminalfast.gif)  
+
+**the normal prompt - prompt in non-git directories**  
+![](https://github.com/yedhink/bashed-on-a-feeling/blob/master/normal.png)  
+
 ## what do those symbols mean?
 
 * ``master i``: on branch ``master``, in its "i"nitial stage , where no remote has been added yet   
@@ -70,5 +83,5 @@ the prompt works in a way that it shows a git prompt only when you're in a git r
 	PROMPT_COMMAND="gitprompt"
 ```
 ## contribute  
-although i made this for my personal use , i believe , others could get involved and contribute their ideas. i will happily take them into account!  
+although i made this for my personal use , i believe , others might find it useful and could get involved and contribute their ideas. i will happily take them into account!  
 you've to follow the [Contribution Guidelines]() while you're at it though.
