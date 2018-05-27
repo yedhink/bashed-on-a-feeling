@@ -2,10 +2,9 @@
 a minamalistic and fast git prompt purely made in bash.  
 inspiration from the `terminalparty` theme of `OMZ` and the need for a minimalistic "git" prompt for version control , these two forces drove me to create this. Also this too ["Ooga-chaka, ooga-ooga"](https://youtu.be/NrI-UBIB8Jki) ;)  
 
-
 ## what do those symbols mean?
 
-* ``master i``: on branch ``master``, in its "i"nitial stage , where no remote has been added yet   
+* ```master ```: on branch ``master``, in its "i"nitial stage , where no remote has been added yet   
 * ``master 2↑ 1✚``: on branch ``master``, ahead of remote by 2 commits, 1 file changed but not staged
 * ``master 6?``: on branch ``master``, 6 files files untracked
 * ``master 2✖ 3✚``: on branch ``master``, 2 unstaged, 3 files modified
@@ -16,7 +15,7 @@ inspiration from the `terminalparty` theme of `OMZ` and the need for a minimalis
 * ``↕``: you're in git repository which has been diverged 
 
 ## installation
-in the above examples i've made use of the Hasklug, a patched variant of [Hasklig]((https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hasklig) and [Font Awesome](https://github.com/FortAwesome/Font-Awesome) fonts.  
+in the above examples i've made use of the Hasklug, a patched variant of [Hasklig](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hasklig) and [Font Awesome](https://github.com/FortAwesome/Font-Awesome) fonts.  
 **the user is required to install and use any of the nerd fonts and Font Awesome font, inorder to render those fancy symbols that i've used**      
 the simplest way to install the fonts on a Linux distro would be to :  
 * download and copy all the fonts(.ttf/.otf) to `~/.fonts` for user or /usr/share/fonts/[T/O]TF directory for global
@@ -38,7 +37,7 @@ You can easily change any symbols used by the prompt. Take a look to the file [.
 **note that the editing , after installation, should be done on `.bashed-gitprompt.sh` file in your home(~) directory for the changes to take place**  
 
 ```bash
-	: ${untracked_files:=''}
+	: ${untracked_files:='?'}
 ```  
 You can change the symbols with your custom ones , just by editing the line(s) like above one and replacing current symbol with yours ;)
 
