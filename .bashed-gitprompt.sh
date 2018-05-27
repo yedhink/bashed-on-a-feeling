@@ -28,21 +28,21 @@
 : ${untracked_files:=''}
 : ${gitprompt_icon:=''}
 
-read a_but_not_c c_but_not_p c_but_m_before_p untracked <<< $( echo | xargs -n 1 -P 8 ~/.cal.sh )
+read a_but_not_c c_but_not_p c_but_m_before_p untracked gbranch commitstot<<< $( echo | xargs -n 1 -P 8 ~/bashed-on-a-feeling/.cal.sh )
 
-while read -ra Z; do
-	if [[ "${Z[@]}" == \*\ * ]]; then
-		gbranch="${Z[1]}"
-		break
-	fi
-done <<< "$(/usr/bin/git branch 2> /dev/null)"
-gbranch=`tput bold; tput setaf 7 ;echo "$gbranch"`
-
-
-while read -r Z; do
-	[[ "$Z" == commit* ]] && cno+=1
-done <<< "$(/usr/bin/git log 2> /dev/null)"
-commitstot=$cno
+#while read -ra Z; do
+#	if [[ "${Z[@]}" == \*\ * ]]; then
+#		gbranch="${Z[1]}"
+#		break
+#	fi
+#done <<< "$(/usr/bin/git branch 2> /dev/null)"
+#gbranch=`tput bold; tput setaf 7 ;echo "$gbranch"`
+#
+#
+#while read -r Z; do
+#	[[ "$Z" == commit* ]] && cno+=1
+#done <<< "$(/usr/bin/git log 2> /dev/null)"
+#commitstot=$cno
 
 if [ $a_but_not_c -eq 0 ];then
 	a_but_not_c=""
