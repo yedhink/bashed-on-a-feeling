@@ -23,8 +23,8 @@ git rev-list --left-right --count origin/master..."$gbranch" >/dev/null 2>&1
 if [ "$?" == 0 ];then
 	rev=`git rev-list --left-right --count origin/master..."$gbranch"`;
 	echo -ne "$(cut -f1 <<< $rev )"
-	echo -ne "$(cut -f2 <<< $rev )"
+	echo -e "$(cut -f2 <<< $rev )"
 else
 	echo -ne "-1" 
-	echo -ne "-1"
+	echo -e "-1"
 fi
