@@ -17,14 +17,12 @@ echo -ne "$(git diff --cached --name-only | wc -l)"\
 	"$(git diff --name-status | wc -l)"\
 	"$(git ls-files --others --exclude-standard | wc -l)"\
 	"$gbranch"\
-	"${cno}"
+	"${cno}"\
 
 git rev-list --left-right --count origin/master..."$gbranch" >/dev/null 2>&1
 if [ "$?" == 0 ];then
 	rev=`git rev-list --left-right --count origin/master..."$gbranch"`;
-	echo -ne "$(cut -f1 <<< $rev )"
-	echo -e "$(cut -f2 <<< $rev )"
+	echo -e "$(cut -f1 <<< $rev )" "$(cut -f2 <<< $rev )"
 else
-	echo -ne "-1" 
-	echo -e "-1"
+	echo -e "-1" "-1"
 fi
