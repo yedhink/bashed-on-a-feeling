@@ -3,7 +3,7 @@
 <h3 align="center">a minamalistic and fast git prompt written purely in bash</h3>  
 
 <p align="center">
-  <img src="https://img.shields.io/badge/bash-4.4.19-brightgreen.svg" />
+  <a href="https://github.com/yedhink/dotfiles_ikigai/blob/master/.bashrc"><img src="https://img.shields.io/badge/bash-4.4.19-brightgreen.svg" /></a>
   <img src="https://img.shields.io/badge/Font%20Awesome-5.0.13-yellow.svg" />
   <img src="https://img.shields.io/badge/Nerd%20Font-Hasklug%20patched-orange.svg" />
   <br><br>
