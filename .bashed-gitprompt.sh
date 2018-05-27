@@ -20,6 +20,7 @@
 # # # # # # # # # # # #
 # set your icons here #
 # # # # # # # # # # # #
+: ${no_remote_added:=''} 
 : ${commiticon:=''} # or you can try f737 with a nerd font
 : ${added_but_not_committed:=''}
 : ${committed_and_clean:=''}
@@ -43,22 +44,28 @@ if [ $c_but_not_p -gt 0 ];then
 	((c_but_not_p = c_but_not_p - 1 ))
 fi
 
-if [ $aheadby -eq 0 ] && [ $behindby -eq 0 ];then
-	aheadby="$(tput bold)$(tput setaf 2)$(echo $committed_and_clean)"
-	behindby=""
-else
-	if [ $aheadby != 0 ] && [ $behindby != 0 ];then
-		aheadby="$(tput bold)$(tput setaf 7)$aheadby$(tput bold)$(tput setaf 2)$(echo $ahead)"
-		behindby="$(tput bold)$(tput setaf 7)$behindby$(tput bold)$(tput setaf 2)$(echo $behind)"
-		#set git prompt diverged symbol too
-	elif [ $aheadby -eq 0 ] && [ $behindby != 0 ];then
-		aheadby=""
-		behindby="$(tput bold)$(tput setaf 7)$behindby$(tput bold)$(tput setaf 2)$(echo $behind)"
-	else
-		aheadby="$(tput bold)$(tput setaf 7)$aheadby$(tput bold)$(tput setaf 2)$(echo $ahead)"
+if [ $aheadby != -1 ] && [ $behindby != -1 ];then
+	if [ $aheadby -eq 0 ] && [ $behindby -eq 0 ];then
+		aheadby="$(tput bold)$(tput setaf 2)$(echo $committed_and_clean)"
 		behindby=""
+	else
+		if [ $aheadby != 0 ] && [ $behindby != 0 ];then
+			aheadby="$(tput bold)$(tput setaf 7)$aheadby$(tput bold)$(tput setaf 2)$(echo $ahead)"
+			behindby="$(tput bold)$(tput setaf 7)$behindby$(tput bold)$(tput setaf 2)$(echo $behind)"
+			#set git prompt diverged symbol too
+		elif [ $aheadby -eq 0 ] && [ $behindby != 0 ];then
+			aheadby=""
+			behindby="$(tput bold)$(tput setaf 7)$behindby$(tput bold)$(tput setaf 2)$(echo $behind)"
+		else
+			aheadby="$(tput bold)$(tput setaf 7)$aheadby$(tput bold)$(tput setaf 2)$(echo $ahead)"
+			behindby=""
+		fi
 	fi
+else
+	aheadby="$(tput bold)$(tput setaf 2)$(echo $no_remote_added)"
+	behindby=""
 fi
+
 
 if [ $c_but_m_before_p -eq 0 ];then
 	c_but_m_before_p=""
