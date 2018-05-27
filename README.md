@@ -94,4 +94,8 @@ i meant these lines :
 ```
 ## contribute  
 although i made this for my personal use , i believe , others might find it useful and could get involved and contribute their ideas. i will happily take them into account!  
-you've to follow the [Contribution Guidelines]() while you're at it though.
+you've to follow the [Contribution Guidelines]() while you're at it though.  
+
+## license
+***"use this repo in the name of open source and freeeedoooom!!!"***  
+refer to [License]() for more details. :)
