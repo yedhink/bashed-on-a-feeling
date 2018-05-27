@@ -9,13 +9,13 @@ inspiration from the `terminalparty` theme of `OMZ` and the need for a minimalis
 
 ## what do those symbols mean?
 
-* ``master ``: on branch ``master``, in its "i"nitial stage , where no remote has been added yet   
+* ``master i``: on branch ``master``, in its "i"nitial stage , where no remote has been added yet   
 * ``master 2↑ 1✚``: on branch ``master``, ahead of remote by 2 commits, 1 file changed but not staged
-* ``master 6``: on branch ``master``, 6 files files untracked
+* ``master 6?``: on branch ``master``, 6 files files untracked
 * ``master 2✖ 3✚``: on branch ``master``, 2 unstaged, 3 files modified
 * ``master ``: on branch ``master``, is clean
 * ``mine 2 3↑``: on branch ``mine``; your branch is behind by 2 and ahead by 3 commits; the repository is otherwise clean
-* ``~/bashed-on-a-feeling 39 ``: the fire has been lit , the repo has a total of 39 commits 
+* ``~/bashed-on-a-feeling 39 ``: the fire has been lit , the repo has a total of 39 commits 
 * ``git``: you're in git repository 
 * ````: you're in git repository which has been diverged 
 
