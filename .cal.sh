@@ -7,7 +7,7 @@ while read -ra Z; do
 	fi
 done <<< "$(/usr/bin/git branch 2> /dev/null)"
 
-local cno=0
+cno=0
 while read -r Z; do
 	[[ "$Z" == commit* ]] && cno+=1
 done <<< "$(/usr/bin/git log 2> /dev/null)"
