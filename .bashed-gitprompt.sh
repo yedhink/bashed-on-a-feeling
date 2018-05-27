@@ -30,7 +30,7 @@
 : ${untracked_files:=''}
 : ${gitprompt_icon:=''}
 
-read a_but_not_c c_but_not_p c_but_m_before_p untracked gbranch commitstot aheadby behindby<<< $( echo | xargs -n 1 -P 8 ~/.cal.sh )
+read a_but_not_c c_but_not_p c_but_m_before_p untracked gbranch commitstot behindby aheadby<<< $( echo | xargs -n 1 -P 8 ~/.cal.sh )
 
 gbranch="$(tput bold)$(tput setaf 7)$gbranch"
 
