@@ -2,10 +2,11 @@
     
 <h3 align="center">a minamalistic and fast git prompt written purely in bash</h3>  
 
-inspiration from the `terminalparty` theme of `OMZ` and the need for a minimalistic "git" prompt for version control , these two forces drove me to create this. Also this too ["Ooga-chaka, ooga-ooga"](https://youtu.be/NrI-UBIB8Jki) ;)  
+<p align="center">
+  <img src="https://github.com/yedhink/bashed-on-a-feeling/blob/master/previews/cleanfull.png">
+</p>  
 
-**the clean prompt. the check mark says that the repo is clean**  
-![](https://github.com/yedhink/bashed-on-a-feeling/blob/master/previews/clean.png)  
+inspiration from the `terminalparty` theme of `OMZ` and the need for a minimalistic "git" prompt for version control , were the main two forces that drove me to create this. Also this too ["Ooga-chaka, ooga-ooga"](https://youtu.be/NrI-UBIB8Jki) ;)  
 
 **lets see how much is the average time the git-prompt takes to load up :**    
 ```bash
