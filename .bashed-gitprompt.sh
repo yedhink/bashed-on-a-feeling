@@ -23,12 +23,13 @@
 : ${commiticon:=''} # or you can try f737 with a nerd font
 : ${added_but_not_committed:=''}
 : ${committed_and_clean:=''}
-: ${no_of_commits_to_be_pushed:=''}
+: ${ahead:=''}
+: ${behind:=''}
 : ${committed_but_modified_before_push:=''}
 : ${untracked_files:=''}
 : ${gitprompt_icon:=''}
 
-read a_but_not_c c_but_not_p c_but_m_before_p untracked gbranch commitstot<<< $( echo | xargs -n 1 -P 8 ~/.cal.sh )
+read a_but_not_c c_but_not_p c_but_m_before_p untracked gbranch commitstot aheadby behindby<<< $( echo | xargs -n 1 -P 8 ~/.cal.sh )
 
 gbranch="$(tput bold)$(tput setaf 7)$gbranch"
 
@@ -42,10 +43,21 @@ if [ $c_but_not_p -gt 0 ];then
 	((c_but_not_p = c_but_not_p - 1 ))
 fi
 
-if [ $c_but_not_p -eq "0" ];then
-	c_but_not_p="$(tput bold)$(tput setaf 2)$(echo $committed_and_clean)"
+if [ $aheadby -eq "0" && $behindby -eq "0" ];then
+	aheadby="$(tput bold)$(tput setaf 2)$(echo $committed_and_clean)"
+	behindby=""
 else
-	c_but_not_p="$(tput bold)$(tput setaf 7)$c_but_not_p$(tput bold)$(tput setaf 2)$(echo $no_of_commits_to_be_pushed)"
+	if [ $aheadby != 0 && $behindby != 0 ];then
+		aheadby="$(tput bold)$(tput setaf 7)$aheadby$(tput bold)$(tput setaf 2)$(echo $ahead)"
+		behindby="$(tput bold)$(tput setaf 7)$behindby$(tput bold)$(tput setaf 2)$(echo $behind)"
+		#set git prompt diverged symbol too
+	elif [ $aheadby == 0 && $behindby != 0 ];then
+		aheadby=""
+		behindby="$(tput bold)$(tput setaf 7)$behindby$(tput bold)$(tput setaf 2)$(echo $behind)"
+	else
+		aheadby="$(tput bold)$(tput setaf 7)$aheadby$(tput bold)$(tput setaf 2)$(echo $ahead)"
+		behindby=""
+	fi
 fi
 
 if [ $c_but_m_before_p -eq 0 ];then
@@ -60,7 +72,7 @@ else
 	untracked="$(tput bold)$(tput setaf 7)$untracked$(tput bold)$(tput setaf 2)$(echo $untracked_files)"
 fi
 # Create a string
-printf -v PS1RHS "\e[0m \e[0;1;31m%s %s %s %s %s\e[0m" "$gbranch" "$a_but_not_c" "$c_but_not_p" "$c_but_m_before_p" "$untracked"
+printf -v PS1RHS "\e[0m \e[0;1;31m%s %s %s %s %s\e[0m" "$gbranch" "$a_but_not_c" "$aheadby" "$behindby" "$c_but_m_before_p" "$untracked"
 
 # Strip ANSI commands before counting length
 PS1RHS_stripped=$(sed "s,\x1B\[[0-9;]*[a-zA-Z],,g" <<<"$PS1RHS")
