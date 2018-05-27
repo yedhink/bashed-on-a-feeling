@@ -58,12 +58,12 @@ then restart your terminal. BOOM!
 ## customizing symbols
 
 **note that the editing , after installation, should be done on `.bashed-gitprompt.sh` file in your home(~) directory for the changes to take place**  
-you can easily change any symbols used by the prompt. Take a look to the file [.bashed-gitprompt.sh]() . you will find a bunch of variables, each of them with its default value. the variable names were meant to be auto-explanatory. Something like  
+you can easily change any symbols used by the prompt. take a look to the file [.bashed-gitprompt.sh]() . you will find a bunch of variables, each of them with its default value. the variable names were meant to be auto-explanatory. Something like  
 
 ```bash
 	: ${untracked_files:='?'}
 ```  
-You can change the symbols with your custom ones , just by editing the line(s) like above one and replacing current symbol with yours ;)
+you can change the symbols with your custom ones , just by editing the line(s) like above one and replacing current symbol with yours ;)
 
 ## normal prompt - when you're not in a git directory  
 the prompt works in a way that it shows a git prompt only when you're in a git repo , otherwise a normal prompt of your choice will be displayed. inorder to customize the normal prompt , edit the line `export PS1=` inside the function `gitprompt()` in your `.bashrc` after installation.  
