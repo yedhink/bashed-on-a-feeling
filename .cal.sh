@@ -12,21 +12,19 @@ while read -r Z; do
 	[[ "$Z" == commit* ]] && ((cno+=1))
 done <<< "$(/usr/bin/git log 2> /dev/null)"
 
-echo
-echo -ne "$(git diff --cached --name-only | wc -l)  "
-echo -ne "$(git diff --stat origin/master.. | wc -l) "
-echo -ne "$(git diff --name-status | wc -l) "
-echo -ne "$(git ls-files --others --exclude-standard | wc -l) "
-echo -ne "$gbranch "
-echo -ne "${cno} "
+echo -e "$(git diff --cached --name-only | wc -l)"\
+	"$(git diff --stat origin/master.. | wc -l)"\
+	"$(git diff --name-status | wc -l)"\
+	"$(git ls-files --others --exclude-standard | wc -l)"\
+	"$gbranch"\
+	"${cno}"
 
 git rev-list --left-right --count origin/master..."$gbranch" >/dev/null 2>&1
 if [ "$?" == 0 ];then
 	rev=`git rev-list --left-right --count origin/master..."$gbranch"`;
-	echo -ne "$(cut -f1 <<< $rev ) "
-	echo -ne "$(cut -f2 <<< $rev ) "
+	echo -ne "$(cut -f1 <<< $rev )"
+	echo -ne "$(cut -f2 <<< $rev )"
 else
-	echo -ne "-1 " 
-	echo -ne "-1 "
+	echo -ne "-1" 
+	echo -ne "-1"
 fi
-echo
