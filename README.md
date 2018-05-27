@@ -4,14 +4,17 @@
 inspiration from the `terminalparty` theme of `OMZ` and the need for a minimalistic "git" prompt for version control , these two forces drove me to create this. Also this too ["Ooga-chaka, ooga-ooga"](https://youtu.be/NrI-UBIB8Jki) ;)  
 
 **the clean prompt. the check mark says that the repo is clean**  
-![](https://github.com/yedhink/bashed-on-a-feeling/blob/master/clean.png)  
+![](https://github.com/yedhink/bashed-on-a-feeling/blob/master/previews/clean.png)  
 
 **lets see how much is the average time the git-prompt takes to load up :**    
 ```bash
-for i in $(seq 1 10); do time $SHELL -i -c exit > /dev/null 2>&1; done'
-	```  
-run this and see for yourself.  
-![](https://github.com/yedhink/bashed-on-a-feeling/blob/master/terminalfast.gif)  
+	for i in $(seq 1 10); do time $SHELL -i -c exit > /dev/null 2>&1; done
+```  
+run the above and see for yourself.  
+![](https://github.com/yedhink/bashed-on-a-feeling/blob/master/previews/terminalfast.gif)  
+
+**a fully functional git repo - 17710 commits, on branch v4-dev, 1 unstaged, 6192 commits ahead, 333 behind and 1 untracked file**  
+![](https://github.com/yedhink/bashed-on-a-feeling/blob/master/previews/busy.png)  
 
 **the normal prompt - prompt in non-git directories**  
 ![](https://github.com/yedhink/bashed-on-a-feeling/blob/master/normal.png)  
@@ -57,7 +60,6 @@ You can change the symbols with your custom ones , just by editing the line(s) l
 
 ## normal prompt - when you're not in a git directory  
 the prompt works in a way that it shows a git prompt only when you're in a git repo , otherwise a normal prompt of your choice will be displayed. inorder to customize the normal prompt , edit the line `export PS1=` inside the function `gitprompt()` in your `.bashrc` after installation.  
-![](default prompt which you can edit)  
 
 ## uninstall :(  
 * just comment out `PROMPT_COMMAND="gitprompt"` in your `.bashrc` to disable this prompt
