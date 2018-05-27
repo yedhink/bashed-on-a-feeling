@@ -10,9 +10,9 @@
 #
 # this is a custom prompt that i made when i started struggling with maintaining my repos and was not able to find a git-prompt of my liking
 # FEATURES :
-#	  MINAMILISTIC CHECK
-#	  INFORMATIVE  CHECK
-#	  FAST         CHECK
+#	  MINAMILISTIC 
+#	  INFORMATIVE  
+#	  FAST         
 #
 #  "ahh..ahh..ah..bashed-on-a-feeling!"
 #
@@ -29,21 +29,6 @@
 : ${gitprompt_icon:=''}
 
 read a_but_not_c c_but_not_p c_but_m_before_p untracked gbranch commitstot<<< $( echo | xargs -n 1 -P 8 ~/.cal.sh )
-
-echo "$commitstot"
-#while read -ra Z; do
-#	if [[ "${Z[@]}" == \*\ * ]]; then
-#		gbranch="${Z[1]}"
-#		break
-#	fi
-#done <<< "$(/usr/bin/git branch 2> /dev/null)"
-#gbranch=`tput bold; tput setaf 7 ;echo "$gbranch"`
-#
-#
-#while read -r Z; do
-#	[[ "$Z" == commit* ]] && cno+=1
-#done <<< "$(/usr/bin/git log 2> /dev/null)"
-#commitstot=$cno
 
 if [ $a_but_not_c -eq 0 ];then
 	a_but_not_c=""
@@ -81,5 +66,5 @@ local Save='\e[s' # Save cursor position
 local Rest='\e[u' # Restore cursor to save point
 
 # bashed-git-prompt \m/
-PS1='\[\e[1;33;3m\]\w \[\e[0m\]$(tput setaf 2)$(tput bold)$commitstot $commiticon\n $(tput setaf 7)$(tput bold)$(tput setab 4) $gitprompt_icon\[\e[0m\] '
+PS1='\[\e[1;33;3m\]\w \[\e[0m\]$(tput setaf 2)$(tput bold) $commitstot $commiticon\n $(tput setaf 7)$(tput bold)$(tput setab 4) $gitprompt_icon\[\e[0m\] '
 export PS1="\[${Save}\e[${COLUMNS}C\e[${#PS1RHS_stripped}D${PS1RHS}${Rest}\]${PS1}"
