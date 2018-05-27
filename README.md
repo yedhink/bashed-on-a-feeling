@@ -71,7 +71,8 @@ the prompt works in a way that it shows a git prompt only when you're in a git r
 ## uninstall :(  
 * just comment out `PROMPT_COMMAND="gitprompt"` in your `.bashrc` to disable this prompt
 * (optionally) remove the files `.bashed-gitprompt.sh` and `.cal.sh` from home
-* (optionally) also remove the lines of code under the heading `bashed-on-a-feeling`in your `.bashrc`. i meant these lines :  
+* (optionally) also remove the lines of code under the heading `bashed-on-a-feeling`in your `.bashrc`  
+i meant these lines :    
 ```bash
 	# # # # # # # # # # # #
 	# bashed-on-a-feeling #
