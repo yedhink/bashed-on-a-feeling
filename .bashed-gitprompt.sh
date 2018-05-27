@@ -45,15 +45,16 @@ if [ $c_but_not_p -gt 0 ];then
 	((c_but_not_p = c_but_not_p - 1 ))
 fi
 
-if [ $aheadby != -1 ] && [ $behindby != -1 ];then
+if [ $aheadby != -1 ];then
 	if [ $aheadby -eq 0 ] && [ $behindby -eq 0 ];then
 		aheadby="$(tput bold)$(tput setaf 2)$(echo $committed_and_clean)"
 		behindby=""
 	else
+		gitprompt=$gitprompt_normal
 		if [ $aheadby != 0 ] && [ $behindby != 0 ];then
 			aheadby="$(tput bold)$(tput setaf 7)$aheadby$(tput bold)$(tput setaf 2)$(echo $ahead)"
 			behindby="$(tput bold)$(tput setaf 7)$behindby$(tput bold)$(tput setaf 2)$(echo $behind)"
-			gitprompt_normal=$gitprompt_diverged
+			gitprompt=$gitprompt_diverged
 		elif [ $aheadby -eq 0 ] && [ $behindby != 0 ];then
 			aheadby=""
 			behindby="$(tput bold)$(tput setaf 7)$behindby$(tput bold)$(tput setaf 2)$(echo $behind)"
@@ -63,7 +64,7 @@ if [ $aheadby != -1 ] && [ $behindby != -1 ];then
 		fi
 	fi
 else
-	: ${gitprompt_normal:='git'}
+	gitprompt=$gitprompt_normal
 	aheadby="$(tput bold)$(tput setaf 2)$(echo $no_remote_added)"
 	behindby=""
 fi
@@ -89,5 +90,5 @@ local Save='\e[s' # Save cursor position
 local Rest='\e[u' # Restore cursor to save point
 
 # bashed-git-prompt \m/
-PS1='\[\e[1;33;3m\]\w \[\e[0m\]$(tput setaf 2)$(tput bold) $commitstot $commiticon\n $(tput setaf 7)$(tput bold)$(tput setab 4) $gitprompt_normal\[\e[0m\] '
+PS1='\[\e[1;33;3m\]\w \[\e[0m\]$(tput setaf 2)$(tput bold) $commitstot $commiticon\n $(tput setaf 7)$(tput bold)$(tput setab 4) $gitprompt\[\e[0m\] '
 export PS1="\[${Save}\e[${COLUMNS}C\e[${#PS1RHS_stripped}D${PS1RHS}${Rest}\]${PS1}"
