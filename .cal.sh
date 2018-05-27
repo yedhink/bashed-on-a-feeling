@@ -13,3 +13,4 @@ while read -r Z; do
 done <<< "$(/usr/bin/git log 2> /dev/null)"
 
 echo -e "$(git diff --cached --name-only | wc -l)" "$(git diff --stat origin/master.. | wc -l)" "$(git diff --name-status | wc -l)" "$(git ls-files --others --exclude-standard | wc -l)" "$gbranch" "${cno}"
+git rev-list --left-right --count origin/master...master | xargs -I {} sh -c 'cut -f1 <<< "{}";cut -f2 <<< "{}"'
