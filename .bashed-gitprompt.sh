@@ -63,6 +63,7 @@ if [ $aheadby != -1 ] && [ $behindby != -1 ];then
 		fi
 	fi
 else
+	: ${gitprompt_normal:='git'}
 	aheadby="$(tput bold)$(tput setaf 2)$(echo $no_remote_added)"
 	behindby=""
 fi
