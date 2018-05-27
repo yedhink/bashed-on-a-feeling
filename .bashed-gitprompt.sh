@@ -28,7 +28,8 @@
 : ${behind:=''}
 : ${committed_but_modified_before_push:=''}
 : ${untracked_files:=''}
-: ${gitprompt_icon:=''}
+: ${gitprompt_normal:=''}
+: ${gitprompt_diverged:=''}
 
 read a_but_not_c c_but_not_p c_but_m_before_p untracked gbranch commitstot behindby aheadby<<< $( echo | xargs -n 1 -P 8 ~/.cal.sh )
 
@@ -52,7 +53,7 @@ if [ $aheadby != -1 ] && [ $behindby != -1 ];then
 		if [ $aheadby != 0 ] && [ $behindby != 0 ];then
 			aheadby="$(tput bold)$(tput setaf 7)$aheadby$(tput bold)$(tput setaf 2)$(echo $ahead)"
 			behindby="$(tput bold)$(tput setaf 7)$behindby$(tput bold)$(tput setaf 2)$(echo $behind)"
-			#set git prompt diverged symbol too
+			gitprompt_normal=$gitprompt_diverged
 		elif [ $aheadby -eq 0 ] && [ $behindby != 0 ];then
 			aheadby=""
 			behindby="$(tput bold)$(tput setaf 7)$behindby$(tput bold)$(tput setaf 2)$(echo $behind)"
@@ -87,5 +88,5 @@ local Save='\e[s' # Save cursor position
 local Rest='\e[u' # Restore cursor to save point
 
 # bashed-git-prompt \m/
-PS1='\[\e[1;33;3m\]\w \[\e[0m\]$(tput setaf 2)$(tput bold) $commitstot $commiticon\n $(tput setaf 7)$(tput bold)$(tput setab 4) $gitprompt_icon\[\e[0m\] '
+PS1='\[\e[1;33;3m\]\w \[\e[0m\]$(tput setaf 2)$(tput bold) $commitstot $commiticon\n $(tput setaf 7)$(tput bold)$(tput setab 4) $gitprompt_normal\[\e[0m\] '
 export PS1="\[${Save}\e[${COLUMNS}C\e[${#PS1RHS_stripped}D${PS1RHS}${Rest}\]${PS1}"
