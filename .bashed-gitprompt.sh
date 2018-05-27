@@ -21,7 +21,7 @@
 # set your icons here #
 # # # # # # # # # # # #
 : ${no_remote_added:=''} 
-: ${commiticon:=''} # or you can try f737 with a nerd font
+: ${commiticon:=''} # or you can try f737 with a nerd font, which's way cooler ;)
 : ${added_but_not_committed:=''}
 : ${committed_and_clean:=''}
 : ${ahead:=''}
