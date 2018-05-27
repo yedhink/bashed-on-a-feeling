@@ -42,7 +42,7 @@ if [ $c_but_not_p -gt 0 ];then
 	((c_but_not_p = c_but_not_p - 1 ))
 fi
 
-if [ $c_but_not_p == 0 ];then
+if [ $c_but_not_p -eq "0" ];then
 	c_but_not_p="$(tput bold)$(tput setaf 2)$(echo $committed_and_clean)"
 else
 	c_but_not_p="$(tput bold)$(tput setaf 7)$c_but_not_p$(tput bold)$(tput setaf 2)$(echo $no_of_commits_to_be_pushed)"
