@@ -3,7 +3,7 @@
 #
 #  ▓▓▓▓▓▓▓▓▓▓
 # ░▓ author ▓ ikigai
-# ░▓ code   ▓ https://github.com/yedhink/dotfiles_ikigai
+# ░▓ code   ▓ https://github.com/yedhink/bashed-on-a-feeling
 # ░▓ 	    ▓
 # ░▓▓▓▓▓▓▓▓▓▓
 # ░░░░░░░░░░
@@ -35,7 +35,7 @@ read a_but_not_c c_but_not_p c_but_m_before_p untracked gbranch commitstot behin
 
 gbranch="$(tput bold)$(tput setaf 7)$gbranch"
 
-if [ $a_but_not_c -eq 0 ];then
+if [ $a_but_not_c == 0 ];then
 	a_but_not_c=""
 else
 	a_but_not_c="$(tput bold)$(tput setaf 7)$a_but_not_c$(tput bold)$(tput setaf 2)$(echo $added_but_not_committed)"
@@ -46,7 +46,7 @@ if [ $c_but_not_p -gt 0 ];then
 fi
 
 if [ $aheadby != -1 ];then
-	if [ $aheadby -eq 0 ] && [ $behindby -eq 0 ];then
+	if [ $aheadby == 0 ] && [ $behindby == 0 ];then
 		gitprompt=$gitprompt_normal
 		aheadby="$(tput bold)$(tput setaf 2)$(echo $committed_and_clean)"
 		behindby=""
@@ -56,7 +56,7 @@ if [ $aheadby != -1 ];then
 			aheadby="$(tput bold)$(tput setaf 7)$aheadby$(tput bold)$(tput setaf 2)$(echo $ahead)"
 			behindby="$(tput bold)$(tput setaf 7)$behindby$(tput bold)$(tput setaf 2)$(echo $behind)"
 			gitprompt=$gitprompt_diverged
-		elif [ $aheadby -eq 0 ] && [ $behindby != 0 ];then
+		elif [ $aheadby == 0 ] && [ $behindby != 0 ];then
 			aheadby=""
 			behindby="$(tput bold)$(tput setaf 7)$behindby$(tput bold)$(tput setaf 2)$(echo $behind)"
 		else
@@ -71,13 +71,13 @@ else
 fi
 
 
-if [ $c_but_m_before_p -eq 0 ];then
+if [ $c_but_m_before_p == 0 ];then
 	c_but_m_before_p=""
 else
 	c_but_m_before_p="$(tput bold)$(tput setaf 7)$c_but_m_before_p$(tput bold)$(tput setaf 2)$(echo $committed_but_modified_before_push)"
 fi
 
-if [ $untracked -eq 0 ];then
+if [ $untracked == 0 ];then
 	untracked=""
 else
 	untracked="$(tput bold)$(tput setaf 7)$untracked$(tput bold)$(tput setaf 2)$(echo $untracked_files)"
