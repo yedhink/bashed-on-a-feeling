@@ -5,12 +5,12 @@ while read -ra Z; do
 		gbranch="${Z[1]}"
 		break
 	fi
-done <<< "$(/usr/bin/git branch 2> /dev/null)"
+done <<< "$(git branch 2> /dev/null)"
 
 ((cno=0))
 while read -r Z; do
 	[[ "$Z" == commit* ]] && ((cno+=1))
-done <<< "$(/usr/bin/git log 2> /dev/null)"
+done <<< "$(git log 2> /dev/null)"
 
 git rev-list --left-right --count origin/master..."$gbranch" >/dev/null 2>&1
 if [ "$?" == 0 ];then
