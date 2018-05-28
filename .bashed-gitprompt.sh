@@ -47,6 +47,7 @@ fi
 
 if [ $aheadby != -1 ];then
 	if [ $aheadby -eq 0 ] && [ $behindby -eq 0 ];then
+		gitprompt=$gitprompt_normal
 		aheadby="$(tput bold)$(tput setaf 2)$(echo $committed_and_clean)"
 		behindby=""
 	else
