@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 git=`whereis git | cut -d " " -f2` 
 while read -ra Z; do
@@ -31,4 +31,3 @@ echo -e "$($git diff --cached --name-only | wc -l)"\
 	"${cno}"\
 	"$beh"\
 	"$ahe"
-
