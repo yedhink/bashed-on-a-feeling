@@ -31,14 +31,35 @@
 : ${gitprompt_normal:='git'}
 : ${gitprompt_diverged:=''}
 
+# # # # # # # # # # # #
+#  the colors for use #
+# # # # # # # # # # # #
+boldGreen="$(tput bold)$(tput setaf 2)"
+boldWhite="$(tput bold)$(tput setaf 7)"
+textReset="$(tput sgr0)"
+
+# # # # # # # # # # # #
+#  the colors for PS1 #
+# # # # # # # # # # # #
+ps1Blk="\[$(tput setaf 0)\]"                    # Black - \[\e[0;30m\]
+ps1Red="\[$(tput bold)\]\[$(tput setaf 9)\]"    # Bold Red - \[\e[1;31m\]
+ps1Grn="\[$(tput setaf 10)\]"                   # Normal Green - \[\e[0;32m\]
+ps1Ylw="\[$(tput bold)\]\[$(tput setaf 11)\]"   # Bold Yellow - \[\e[1;33m\]
+ps1Blu="\[$(tput setaf 32)\]"                   # Blue - \[\e[38;5;32m\]
+ps1Mag="\[$(tput bold)\]\[$(tput setaf 13)\]"   # Bold Magenta - \[\e[1;35m\]
+ps1Cyn="\[$(tput bold)\]\[$(tput setaf 14)\]"   # Bold Cyan - \[\e[1;36m\]
+ps1Wte="\[$(tput bold)\]\[$(tput setaf 15)\]"   # Bold White - \[\e[1;37m\]
+ps1Ora="\[$(tput setaf 208)\]"                  # Orange - \[\e[38;5;208m\]
+ps1Rst="\[$(tput sgr0)\]"                       # Reset text - \[\e[0m\]
+
 read a_but_not_c c_but_not_p c_but_m_before_p untracked gbranch commitstot behindby aheadby<<< $( echo | xargs -n 1 -P 8 ~/.cal.sh )
 
-gbranch="$(tput bold)$(tput setaf 7)$gbranch"
+gbranch="$(boldWhite)$gbranch"
 
 if [ $a_but_not_c == 0 ];then
 	a_but_not_c=""
 else
-	a_but_not_c="$(tput bold)$(tput setaf 7)$a_but_not_c$(tput bold)$(tput setaf 2)$(echo $added_but_not_committed)"
+	a_but_not_c="$(boldWhite)$a_but_not_c$(tput bold)$(tput setaf 2)$(echo $added_but_not_committed)"
 fi
 
 if [ $c_but_not_p -gt 0 ];then
@@ -53,14 +74,14 @@ if [ $aheadby != -1 ];then
 	else
 		gitprompt=$gitprompt_normal
 		if [ $aheadby != 0 ] && [ $behindby != 0 ];then
-			aheadby="$(tput bold)$(tput setaf 7)$aheadby$(tput bold)$(tput setaf 2)$(echo $ahead)"
-			behindby="$(tput bold)$(tput setaf 7)$behindby$(tput bold)$(tput setaf 2)$(echo $behind)"
+			aheadby="$(boldWhite)$aheadby$(tput bold)$(tput setaf 2)$(echo $ahead)"
+			behindby="$(boldWhite)$behindby$(tput bold)$(tput setaf 2)$(echo $behind)"
 			gitprompt=$gitprompt_diverged
 		elif [ $aheadby == 0 ] && [ $behindby != 0 ];then
 			aheadby=""
-			behindby="$(tput bold)$(tput setaf 7)$behindby$(tput bold)$(tput setaf 2)$(echo $behind)"
+			behindby="$(boldWhite)$behindby$(tput bold)$(tput setaf 2)$(echo $behind)"
 		else
-			aheadby="$(tput bold)$(tput setaf 7)$aheadby$(tput bold)$(tput setaf 2)$(echo $ahead)"
+			aheadby="$(boldWhite)$aheadby$(tput bold)$(tput setaf 2)$(echo $ahead)"
 			behindby=""
 		fi
 	fi
@@ -74,13 +95,13 @@ fi
 if [ $c_but_m_before_p == 0 ];then
 	c_but_m_before_p=""
 else
-	c_but_m_before_p="$(tput bold)$(tput setaf 7)$c_but_m_before_p$(tput bold)$(tput setaf 2)$(echo $committed_but_modified_before_push)"
+	c_but_m_before_p="$(boldWhite)$c_but_m_before_p$(tput bold)$(tput setaf 2)$(echo $committed_but_modified_before_push)"
 fi
 
 if [ $untracked == 0 ];then
 	untracked=""
 else
-	untracked="$(tput bold)$(tput setaf 7)$untracked$(tput bold)$(tput setaf 2)$(echo $untracked_files)"
+	untracked="$(boldWhite)$untracked$(tput bold)$(tput setaf 2)$(echo $untracked_files)"
 fi
 # Create a string
 printf -v PS1RHS "\e[0m \e[0;1;31m%s %s %s %s %s %s\e[0m" "$gbranch" "$a_but_not_c" "$aheadby" "$behindby" "$c_but_m_before_p" "$untracked"
