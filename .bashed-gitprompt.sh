@@ -34,15 +34,15 @@
 # # # # # # # # # # # #
 #  the colors for use #
 # # # # # # # # # # # #
-boldGreen = "$(tput bold)$(tput setaf 2)"
-boldWhite = "$(tput bold)$(tput setaf 7)"
+boldGreen="$(tput bold)$(tput setaf 2)"
+boldWhite="$(tput bold)$(tput setaf 7)"
 
 # # # # # # # # # # # #
 #  the colors for PS1 #
 # # # # # # # # # # # #
-ps1Dir    = "$(tput bold)$(tput setaf 3)" # Same as - \[\e[1;33;3m\]
-ps1BgBlue = "$(tput setab 4)"
-ps1Rst    = "$(tput sgr0)"                # Reset text - \[\e[0m\]
+ps1Dir="$(tput bold)$(tput setaf 3)" # Same as - \[\e[1;33;3m\]
+ps1BgBlue="$(tput setab 4)"
+ps1Rst="$(tput sgr0)"                # Reset text - \[\e[0m\]
 
 read a_but_not_c c_but_not_p c_but_m_before_p untracked gbranch commitstot behindby aheadby<<< $( echo | xargs -n 1 -P 8 ~/.cal.sh )
 
@@ -105,5 +105,5 @@ local Save=$(tput sc) # Save cursor position
 local Rest=$(tput rc) # Restore cursor to save point
 
 # bashed-git-prompt \m/
-PS1='$ps1Dir\w $ps1Rst$boldGreen $commitstot $commiticon\n $boldWhite$ps1BgBlue $gitprompt$ps1Rst '
+PS1='${ps1Dir}\w ${ps1Rst}${boldGreen} $commitstot $commiticon\n ${boldWhite}${ps1BgBlue} $gitprompt${ps1Rst} '
 export PS1="\[${Save}\e[${COLUMNS}C\e[${#PS1RHS_stripped}D${PS1RHS}${Rest}\]${PS1}"
