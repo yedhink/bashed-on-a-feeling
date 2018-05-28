@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-git=`whereis git | cut -d " " -f2` 
+git=`which git` 
 while read -ra Z; do
 	if [[ "${Z[@]}" == \*\ * ]]; then
 		gbranch="${Z[1]}"
