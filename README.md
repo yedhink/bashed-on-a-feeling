@@ -41,7 +41,7 @@ run the above and see for yourself.
 in the above examples i've made use of the Hasklug nerd font, a patched variant of [Hasklig](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hasklig) and [Font Awesome](https://github.com/FortAwesome/Font-Awesome) fonts.  
 **the user is required to install and use any of the nerd fonts and Font Awesome font, inorder to render those fancy symbols that i've used.**      
 the simplest way to install the fonts on a Linux distro would be to :  
-* choose your [nerd font](https://github.com/ryanoasis/nerd-fonts) and follow the instructions for [font awesome](https://github.com/FortAwesome/Font-Awesome) to use it  
+* choose your preferred (any one would do) [nerd font](https://github.com/ryanoasis/nerd-fonts) and the full [font awesome](https://github.com/FortAwesome/Font-Awesome/tree/master/use-on-desktop) to use it  
 * download and copy all the fonts files(.ttf/.otf) to `~/.fonts` for current user or to /usr/share/fonts/[T/O]TF directory for all
 * run `fc-cache -fv ~/.fonts` to let freetype2 know of those fonts
 
