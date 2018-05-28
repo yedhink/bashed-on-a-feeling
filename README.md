@@ -127,3 +127,6 @@ run this piece of code to check out your colorscheme :
 ## license
 ***"use this repo in the name of open source and freeeedoooom!!!"***  
 refer to [License](https://raw.githubusercontent.com/yedhink/bashed-on-a-feeling/master/LICENSE) for more details. :)
+
+## Liked it?  
+Hope you liked this project, don't forget to give it a star :star:
