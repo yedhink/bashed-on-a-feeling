@@ -96,6 +96,33 @@ i meant these lines :
 although i made this for my personal use , i believe , others might find it useful and could get involved and contribute their ideas. i will happily take them into account!  
 you've to follow the [Contribution Guidelines]() while you're at it though.  
 
+## faq
+---
+
+#### why the colors in the above pics and the ones being displayed on my terminal are different? 
+
+**A**: it's because you/a program changed the color palette of your terminal to something different than the default one.  
+run this piece of code to check out your colorscheme :  
+```bash
+ for fg_color in {0..7}; do
+        set_foreground=$(tput setaf $fg_color)
+        for bg_color in {0..7}; do
+            set_background=$(tput setab $bg_color)
+            echo -n $set_background$set_foreground
+            printf ' F:%s B:%s ' $fg_color $bg_color
+        done
+        echo $(tput sgr0)
+    done
+```
+
+---
+---
+
+#### why are the symbols rendered as empty boxes/not being displayed as it should be? 
+
+**A**:  you need an unicode font (Font Awesome is a must and also a primary font for your terminal , like [Awesome Terminal Fonts](https://github.com/gabrielelana/awesome-terminal-fonts) or nerd fonts like Hasklug for Linux or Sauce Code Pro, Menlo or Monaco on Mac OS X, or Monospace on Ubuntu) installed on your system for rendering the glyphs properly. 
+
+---
 ## license
 ***"use this repo in the name of open source and freeeedoooom!!!"***  
 refer to [License](https://raw.githubusercontent.com/yedhink/bashed-on-a-feeling/master/LICENSE) for more details. :)
