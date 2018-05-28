@@ -112,5 +112,5 @@ local Save='\e[s' # Save cursor position
 local Rest='\e[u' # Restore cursor to save point
 
 # bashed-git-prompt \m/
-PS1='$ps1Dir\w \[\e[0m\]$(tput setaf 2)$(tput bold) $commitstot $commiticon\n $(tput setaf 7)$(tput bold)$(tput setab 4) $gitprompt\[\e[0m\] '
+PS1='${ps1Dir}\w \[\e[0m\]$(tput setaf 2)$(tput bold) $commitstot $commiticon\n $(tput setaf 7)$(tput bold)$(tput setab 4) $gitprompt\[\e[0m\] '
 export PS1="\[${Save}\e[${COLUMNS}C\e[${#PS1RHS_stripped}D${PS1RHS}${Rest}\]${PS1}"
