@@ -59,7 +59,7 @@ gbranch="$boldWhite$gbranch"
 if [ $a_but_not_c == 0 ];then
 	a_but_not_c=""
 else
-	a_but_not_c="$boldWhite$a_but_not_c$(tput bold)$(tput setaf 2)$(echo $added_but_not_committed)"
+	a_but_not_c="$boldWhite$a_but_not_c$boldGreen$(echo $added_but_not_committed)"
 fi
 
 if [ $c_but_not_p -gt 0 ];then
@@ -69,25 +69,25 @@ fi
 if [ $aheadby != -1 ];then
 	if [ $aheadby == 0 ] && [ $behindby == 0 ];then
 		gitprompt=$gitprompt_normal
-		aheadby="$(tput bold)$(tput setaf 2)$(echo $committed_and_clean)"
+		aheadby="$boldGreen$(echo $committed_and_clean)"
 		behindby=""
 	else
 		gitprompt=$gitprompt_normal
 		if [ $aheadby != 0 ] && [ $behindby != 0 ];then
-			aheadby="$boldWhite$aheadby$(tput bold)$(tput setaf 2)$(echo $ahead)"
-			behindby="$boldWhite$behindby$(tput bold)$(tput setaf 2)$(echo $behind)"
+			aheadby="$boldWhite$aheadby$boldGreen$(echo $ahead)"
+			behindby="$boldWhite$behindby$boldGreen$(echo $behind)"
 			gitprompt=$gitprompt_diverged
 		elif [ $aheadby == 0 ] && [ $behindby != 0 ];then
 			aheadby=""
-			behindby="$boldWhite$behindby$(tput bold)$(tput setaf 2)$(echo $behind)"
+			behindby="$boldWhite$behindby$boldGreen$(echo $behind)"
 		else
-			aheadby="$boldWhite$aheadby$(tput bold)$(tput setaf 2)$(echo $ahead)"
+			aheadby="$boldWhite$aheadby$boldGreen$(echo $ahead)"
 			behindby=""
 		fi
 	fi
 else
 	gitprompt=$gitprompt_normal
-	aheadby="$(tput bold)$(tput setaf 2)$(echo $no_remote_added)"
+	aheadby="$boldGreen$(echo $no_remote_added)"
 	behindby=""
 fi
 
@@ -95,13 +95,13 @@ fi
 if [ $c_but_m_before_p == 0 ];then
 	c_but_m_before_p=""
 else
-	c_but_m_before_p="$boldWhite$c_but_m_before_p$(tput bold)$(tput setaf 2)$(echo $committed_but_modified_before_push)"
+	c_but_m_before_p="$boldWhite$c_but_m_before_p$boldGreen$(echo $committed_but_modified_before_push)"
 fi
 
 if [ $untracked == 0 ];then
 	untracked=""
 else
-	untracked="$boldWhite$untracked$(tput bold)$(tput setaf 2)$(echo $untracked_files)"
+	untracked="$boldWhite$untracked$boldGreen$(echo $untracked_files)"
 fi
 # Create a string
 printf -v PS1RHS "\e[0m \e[0;1;31m%s %s %s %s %s %s\e[0m" "$gbranch" "$a_but_not_c" "$aheadby" "$behindby" "$c_but_m_before_p" "$untracked"
