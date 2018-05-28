@@ -41,7 +41,7 @@ textReset="$(tput sgr0)"
 # # # # # # # # # # # #
 #  the colors for PS1 #
 # # # # # # # # # # # #
-ps1Dir="\[$(tput bold)$(tput setab 3)$(tput setaf 7)\]"  # Same as - \[\e[1;33;3m\]
+ps1Dir="$(tput bold)$(tput setaf 3)"  # Same as - \[\e[1;33;3m\]
 ps1Red="\[$(tput bold)\]\[$(tput setaf 9)\]"    # Bold Red - \[\e[1;31m\]
 ps1Grn="\[$(tput setaf 10)\]"                   # Normal Green - \[\e[0;32m\]
 ps1Ylw="\[$(tput bold)\]\[$(tput setaf 11)\]"   # Bold Yellow - \[\e[1;33m\]
