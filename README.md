@@ -121,9 +121,7 @@ run this piece of code to check out your colorscheme :
 #### why are the symbols rendered as empty boxes/not being displayed as it should be? 
 
 **A**:  you need an unicode font (Font Awesome is a must and also a primary font for your terminal ,  
-		like [Awesome Terminal Fonts](https://github.com/gabrielelana/awesome-terminal-fonts)  
-		or nerd fonts like Hasklug for Linux or Sauce Code Pro, Menlo or Monaco on Mac OS X, or  
-		Monospace on Ubuntu) installed on your system for rendering the glyphs properly. 
+		like [Awesome Terminal Fonts](https://github.com/gabrielelana/awesome-terminal-fonts) or nerd fonts like Hasklug for Linux or Sauce Code Pro, Menlo or Monaco on Mac OS X, or Monospace on Ubuntu etc) installed on your system for rendering the glyphs properly. 
 
 ---
 ## license
