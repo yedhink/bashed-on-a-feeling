@@ -42,15 +42,8 @@ textReset="$(tput sgr0)"
 #  the colors for PS1 #
 # # # # # # # # # # # #
 ps1Dir="$(tput bold)$(tput setaf 3)"  # Same as - \[\e[1;33;3m\]
-ps1Red="\[$(tput bold)\]\[$(tput setaf 9)\]"    # Bold Red - \[\e[1;31m\]
-ps1Grn="\[$(tput setaf 10)\]"                   # Normal Green - \[\e[0;32m\]
-ps1Ylw="\[$(tput bold)\]\[$(tput setaf 11)\]"   # Bold Yellow - \[\e[1;33m\]
-ps1Blu="\[$(tput setaf 32)\]"                   # Blue - \[\e[38;5;32m\]
-ps1Mag="\[$(tput bold)\]\[$(tput setaf 13)\]"   # Bold Magenta - \[\e[1;35m\]
-ps1Cyn="\[$(tput bold)\]\[$(tput setaf 14)\]"   # Bold Cyan - \[\e[1;36m\]
-ps1Wte="\[$(tput bold)\]\[$(tput setaf 15)\]"   # Bold White - \[\e[1;37m\]
-ps1Ora="\[$(tput setaf 208)\]"                  # Orange - \[\e[38;5;208m\]
-ps1Rst="\[$(tput sgr0)\]"                       # Reset text - \[\e[0m\]
+ps1BgBlue="$(tput setab 4)"
+ps1Rst="$(tput sgr0)"  # Reset text - \[\e[0m\]
 
 read a_but_not_c c_but_not_p c_but_m_before_p untracked gbranch commitstot behindby aheadby<<< $( echo | xargs -n 1 -P 8 ~/.cal.sh )
 
@@ -112,5 +105,5 @@ local Save='\e[s' # Save cursor position
 local Rest='\e[u' # Restore cursor to save point
 
 # bashed-git-prompt \m/
-PS1='${ps1Dir}\w \[\e[0m\]$(tput setaf 2)$(tput bold) $commitstot $commiticon\n $(tput setaf 7)$(tput bold)$(tput setab 4) $gitprompt\[\e[0m\] '
+PS1='${ps1Dir}\w ${ps1Rst}${boldGreen} $commitstot $commiticon\n ${boldWhite}${ps1BgBlue} $gitprompt${ps1Rst} '
 export PS1="\[${Save}\e[${COLUMNS}C\e[${#PS1RHS_stripped}D${PS1RHS}${Rest}\]${PS1}"
