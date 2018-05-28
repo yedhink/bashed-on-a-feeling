@@ -100,8 +100,8 @@ printf -v PS1RHS "\e[0m \e[0;1;31m%s %s %s %s %s %s\e[0m" "$gbranch" "$a_but_not
 
 # Strip ANSI commands before counting length
 PS1RHS_stripped=$(sed "s,\x1B\[[0-9;]*[a-zA-Z],,g" <<<"$PS1RHS")
-local Save='\e[s' # Save cursor position
-local Rest='\e[u' # Restore cursor to save point
+local Save=$(tput sc) # Save cursor position
+local Rest=$(tput rc) # Restore cursor to save point
 
 # bashed-git-prompt \m/
 PS1='${ps1Dir}\w ${ps1Rst}${boldGreen} $commitstot $commiticon\n ${boldWhite}${ps1BgBlue} $gitprompt${ps1Rst} '
