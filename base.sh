@@ -10,7 +10,7 @@ gitprompt(){
 		declare -i cno=0
 		source ~/.bashed-gitprompt.sh
 	else
-		export PS1='\[\e[0;31m\]♥ \e[0;31m\]\W \[\e[1;33m\]\$\[\e[0m\] '
+		export PS1='\[\e[0;31m\]♥ \[\e[0;31m\]\W \[\e[1;33m\]\$\[\e[0m\] '
 		gbranch=""
 	fi
 }
