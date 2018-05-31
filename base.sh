@@ -6,7 +6,7 @@
 # git prompt will be shown only when you move to a git dir
 gitprompt(){
 	
-	if git status &> /dev/null; then
+    if `git status &> /dev/null`; then
 		declare -i cno=0
 		source ~/.bashed-gitprompt.sh
 	else
