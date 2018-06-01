@@ -89,7 +89,7 @@ editing should be done on these lines by referring to the available colors:
     # this variable takes only background colors. so use colors like bgRed or bgBlue etc
     gpBck=$bgBlue # Background color for the box in which git or the diverged symbol is shown
 ```  
-say for example , if you want to change the color of the heart symbol in normal prompt to yellow and the git/diverged symbol background to red colors:  
+say for example , if you want to change the color of the heart symbol in normal prompt to yellow and the git/diverged symbol background in git prompt to red color:  
 ```bash
     normalHeart=$Yellow
     gpBck=$Red
