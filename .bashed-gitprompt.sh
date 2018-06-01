@@ -36,9 +36,9 @@
 # # # # # # # # # # # #
 boldGreen="$(tput bold)$(tput setaf 2)"
 boldWhite="$(tput bold)$(tput setaf 7)"
-dirfg="$(tput bold)$(tput setaf 3)"     # Same as - \\e[1;33;3m
+dirfg="$(tput bold)$(tput setaf 3)" # Same as - \\e[1;33;3m
 bgBlue="$(tput setab 4)"
-rst="$(tput sgr0)"                      # Reset text - \\e[0m
+rst="$(tput sgr0)"                  # Reset text - \\e[0m
 
 read a_but_not_c c_but_not_p c_but_m_before_p untracked gbranch commitstot behindby aheadby<<< $( echo | xargs -n 1 -P 8 ~/.cal.sh )
 
