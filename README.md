@@ -69,6 +69,33 @@ you can change the symbols with your custom ones , just by editing the line(s) l
 ## normal prompt - when you're not in a git directory  
 the prompt works in a way that it shows a git prompt only when you're in a git repo , otherwise a normal prompt of your choice will be displayed. inorder to customize the normal prompt , edit the line `export PS1=` inside the function `gitprompt()` in your `.bashrc` after installation.  
 
+## customizing colors  
+now it's possible to choose colors of your choice for both the normal and git prompts. your preferred colors can be set through the `.bashrc` file in your home directory.  
+editing should be done on these lines by referring to the available colors:  
+```bash
+    # # # # # # # # # # # # # # # # # #
+    # SET COLORS FOR THE PROMPT HERE  #
+    # # # # # # # # # # # # # # # # # #
+
+    # Edit Normal Prompt Colors Here
+    normalHeart=$Red    # Color for the heart
+    normalCDire=$Red    # Color for the current directory
+    normalDolar=$Yellow # Color for primary prompt string $
+
+    # Edit Git Prompt Colors Here
+    gpDir=$Yellow # Color for current git directory
+    gpBrn=$White  # Color for current git branch
+    gpAMa=$Green  # Color for both total commits and check mark
+    # this variable takes only background colors. so use colors like bgRed or bgBlue etc
+    gpBck=$bgBlue # Background color for the box in which git or the diverged symbol is shown
+```  
+say for example , if you want to change the color of the heart symbol in normal prompt to yellow and the git/diverged symbol background to red colors:  
+```bash
+    normalHeart=$Yellow
+    gpBck=$Red
+```  
+the available color variables like Red,Yellow etc will be available in your `.bashrc` after installation. after changing the colors either source the file or restart your terminal emulator to see the changes 
+
 ## uninstall :(  
 * just comment out `PROMPT_COMMAND="gitprompt"` in your `.bashrc` to disable this prompt
 * (optionally) remove the files `.bashed-gitprompt.sh` and `.cal.sh` from home
