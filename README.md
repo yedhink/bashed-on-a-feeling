@@ -46,9 +46,6 @@ the simplest way to install the fonts on a Linux distro would be to :
 * run `fc-cache -fv ~/.fonts` or if the downloaded files are in `/usr/local/share/fonts/` then `fc-cache -fv` to let freetype2 know of those fonts
 * you can confirm they are installed correctly by running fc-list | grep "your font name"   
 
-if you would like to make use of fonts other than the ones specified above and still get glyphs rendered, then you'll have to find glyphs which're part of your font and override the default glyphs.  
-say you want to use common dejavu sans fonts, then 
-
 ## start installing
 
 on  your terminal:  
@@ -67,7 +64,20 @@ you can easily change any symbols used by the prompt. take a look to the file [.
 ```bash
 	: ${untracked_files:='?'}
 ```  
-you can change the symbols with your custom ones , just by editing the line(s) like above one and replacing current symbol with yours ;)
+you can change the symbols with your custom ones , just by editing the line(s) like above one and replacing current symbol with yours. say for common dejavu sans fonts you can use:  
+```bash
+    : ${no_remote_added:='✘'}
+    : ${commiticon:='♥'}
+    : ${added_but_not_committed:='♡'}
+    : ${committed_and_clean:='✔'}
+    : ${ahead:='⬆'}
+    : ${behind:='⬇'}
+    : ${committed_but_modified_before_push:='✚'}
+    : ${untracked_files:='⁇'}
+    : ${gitprompt_normal:='☮'}
+    : ${gitprompt_diverged:='☢'}
+```  
+you can make use of `gucharmap` or `https://char-map.herokuapp.com/` to check for glyphs support of the font of your choice.  
 
 ## normal prompt - when you're not in a git directory  
 the prompt works in a way that it shows a git prompt only when you're in a git repo , otherwise a normal prompt of your choice will be displayed. inorder to customize the normal prompt , edit the line `export PS1=` inside the function `gitprompt()` in your `.bashrc` after installation.  
@@ -110,16 +120,15 @@ i meant these lines :
 	# # # # # # # # # # # #
 
 	# git prompt will be shown only when you move to a git dir
-	gitprompt(){
-		git status &> /dev/null
-		if [ "$?" == 0 ];then
-			declare -i cno=0
-			source /home/${USER}/.bashed-gitprompt.sh
-		else
-			export PS1='\[\e[0;31m\]♥ \e[0;31m\]\W \[\e[1;33m\]\$\[\e[0m\] '
-			gbranch=""
-		fi
-	}
+    gitprompt(){
+        if `git status &> /dev/null`; then
+            declare -i cno=0
+            source ~/.bashed-gitprompt.sh
+        else
+            export PS1='\[$normalHeart\]♥ \[$normalCDire\]\W \[$Yellow\]\$\[\e[0m\] '
+            gbranch=""
+        fi
+    }
 
 	PROMPT_COMMAND="gitprompt"
 ```
