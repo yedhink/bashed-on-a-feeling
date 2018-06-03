@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-git=`which git` 
+git=`which git`
 while read -ra Z; do
 	if [[ "${Z[@]}" == \*\ * ]]; then
 		gbranch="${Z[1]}"
@@ -18,16 +18,25 @@ if [ "$?" == 0 ];then
 	rev=`$git rev-list --left-right --count origin/master..."$gbranch"`;
 	beh=$(cut -f1 <<< $rev )
 	ahe=$(cut -f2 <<< $rev )
+
+    echo -e "$($git diff --cached --name-only | wc -l)"\
+        "$($git diff --stat origin/master.. | wc -l)"\
+        "$($git diff --name-status | wc -l)"\
+        "$($git ls-files --others --exclude-standard | wc -l)"\
+        "$gbranch"\
+        "${cno}"\
+        "$beh"\
+        "$ahe"
 else
 	beh="-1"
 	ahe="-1"
+    echo -e "$($git diff --cached --name-only | wc -l)"\
+        "0"\
+        "$($git diff --name-status | wc -l)"\
+        "$($git ls-files --others --exclude-standard | wc -l)"\
+        "$gbranch"\
+        "${cno}"\
+        "$beh"\
+        "$ahe"
 fi
 
-echo -e "$($git diff --cached --name-only | wc -l)"\
-	"$($git diff --stat origin/master.. | wc -l)"\
-	"$($git diff --name-status | wc -l)"\
-	"$($git ls-files --others --exclude-standard | wc -l)"\
-	"$gbranch"\
-	"${cno}"\
-	"$beh"\
-	"$ahe"
