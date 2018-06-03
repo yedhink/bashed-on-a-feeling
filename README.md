@@ -44,7 +44,10 @@ the simplest way to install the fonts on a Linux distro would be to :
 * choose any one of the [nerd fonts](https://github.com/ryanoasis/nerd-fonts) and the full font awesome set from this link [font awesome](https://github.com/FortAwesome/Font-Awesome/tree/master/use-on-desktop) to use it  
 * download and copy all the fonts files(.ttf/.otf) to `~/.fonts` for current user or to /usr/share/fonts/[T/O]TF directory for all
 * run `fc-cache -fv ~/.fonts` or if the downloaded files are in `/usr/local/share/fonts/` then `fc-cache -fv` to let freetype2 know of those fonts
-* you can confirm they are installed correctly by running fc-list | grep "your font name" 
+* you can confirm they are installed correctly by running fc-list | grep "your font name"   
+
+if you would like to make use of fonts other than the ones specified above and still get glyphs rendered, then you'll have to find glyphs which're part of your font and override the default glyphs.  
+say you want to use common dejavu sans fonts, then 
 
 ## start installing
 
