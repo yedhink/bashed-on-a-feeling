@@ -1,6 +1,6 @@
 <h1 align="center">bashed-on-a-feeling</h1>  
     
-<h3 align="center">a minamalistic and fast git prompt written in bash</h3>  
+<h3 align="center">a minamalistic and moderately fast git prompt written in bash</h3>  
 
 <p align="center">
   <a href="https://github.com/yedhink/dotfiles_ikigai/blob/master/i3_hooked_on_a_feeling/.bashrc"><img src="https://img.shields.io/badge/bash-4.4.19-brightgreen.svg" /></a>
