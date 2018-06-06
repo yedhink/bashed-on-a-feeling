@@ -1,6 +1,6 @@
 <h1 align="center">bashed-on-a-feeling</h1>  
     
-<h3 align="center">a minamalistic and moderately fast git prompt written in bash</h3>  
+<h3 align="center">a minimalistic and moderately fast git prompt written in bash</h3>  
 
 <p align="center">
   <a href="https://github.com/yedhink/dotfiles_ikigai/blob/master/i3_hooked_on_a_feeling/.bashrc"><img src="https://img.shields.io/badge/bash-4.4.19-brightgreen.svg" /></a>
@@ -38,7 +38,7 @@ run the above and see for yourself.
 * ``↕``: you're in git repository which has been diverged 
 
 ## installation
-in the above examples i've made use of the Hasklug nerd font, a patched variant of [Hasklig](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hasklig) and [Font Awesome](https://github.com/FortAwesome/Font-Awesome) fonts.  
+in the above examples I've made use of the Hasklug nerd font, a patched variant of [Hasklig](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hasklig) and [Font Awesome](https://github.com/FortAwesome/Font-Awesome) fonts.  
 **the user is required to install and use any of the nerd fonts and Font Awesome font, inorder to render those fancy symbols that i've used.**      
 the simplest way to install the fonts on a Linux distro would be to :  
 * choose any one of the [nerd fonts](https://github.com/ryanoasis/nerd-fonts) and the full font awesome set from this link [font awesome](https://github.com/FortAwesome/Font-Awesome/tree/master/use-on-desktop) to use it  
@@ -161,7 +161,7 @@ run this piece of code to check out your colorscheme :
 #### why are the symbols rendered as empty boxes/not being displayed as it should be? 
 
 **A**:  you need an unicode font (Font Awesome is a must and also a primary font for your terminal ,  
-		like [Awesome Terminal Fonts](https://github.com/gabrielelana/awesome-terminal-fonts) or nerd fonts like Hasklug for Linux or Sauce Code Pro, Menlo or Monaco on Mac OS X, or Monospace on Ubuntu etc) installed on your system for rendering the glyphs properly. refer to [font installation](https://github.com/yedhink/bashed-on-a-feeling#installation) on how to install the font.   
+		like [Awesome Terminal Fonts](https://github.com/gabrielelana/awesome-terminal-fonts) or nerd fonts like Hasklug for Linux or Sauce Code Pro, Menlo or Monaco on Mac OS X, or Monospace on Ubuntu etc) installed on your system for rendering the glyphs properly. refer to [font installation](https://github.com/ye drink/bashed-on-a-feeling#installation) on how to install the font.   
 
 ---
 ## license
