@@ -12,11 +12,10 @@
 
 inspiration from the `terminalparty` theme of `OMZ` and the need for a minimalistic "git" prompt for version control , were the main two forces that drove me to create this. Also this too ["Ooga-chaka, ooga-ooga"](https://youtu.be/NrI-UBIB8Jki) ;)  
 
-**lets see how much is the average time the git-prompt takes to load up :**    
+**if you want to see how much is the average time your prompt takes to load up, then try :**    
 ```bash
 	for i in $(seq 1 10); do time $SHELL -i -c exit > /dev/null 2>&1; done
 ```  
-run the above and see for yourself.  
 ![](https://github.com/yedhink/bashed-on-a-feeling/blob/master/previews/terminalfast.gif)  
 
 **a fully functional git repo - 17710 commits, on branch v4-dev, 1 unstaged, 6192 commits ahead, 333 behind and 1 untracked file**  
