@@ -12,7 +12,7 @@
 
 inspiration from the `terminalparty` theme of `OMZ` and the need for a minimalistic "git" prompt for version control , were the main two forces that drove me to create this. Also this too ["Ooga-chaka, ooga-ooga"](https://youtu.be/NrI-UBIB8Jki) ;)  
 
-**if you want to see how much is the average time your prompt takes to load up, then try :**    
+**if you want to see how much is the average time your prompt takes to load up after entering a git directory, then execute this in the git directory :**    
 ```bash
 	for i in $(seq 1 10); do time $SHELL -i -c exit > /dev/null 2>&1; done
 ```  
